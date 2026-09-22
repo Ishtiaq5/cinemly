@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cinemly — Premium Movie Discovery &amp; Watchlist</title>
+<meta name="description" content="Cinemly is a premium dark-mode movie discovery experience: browse trending films, filter by genre, search instantly, and build a personal watchlist." />
+<meta name="theme-color" content="#08070f" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#discover">Skip to content</a>
+<div class="bg-orb orb-1" aria-hidden="true"></div>
+<div class="bg-orb orb-2" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="Cinemly home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Cinemly
+    </a>
+    <ul class="nav-links">
+      <li><a href="#discover">Discover</a></li>
+      <li><a href="#trending">Trending</a></li>
+      <li><a href="#mylist">My List <span class="count-pill" id="navCount" aria-live="polite">0</span></a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span> New picks curated nightly</p>
+      <h1 id="heroTitle">Find your next <span class="grad">obsession</span>.</h1>
+      <p class="lede">A premium discovery engine for film lovers. Browse trending titles, filter by mood, and keep a watchlist that actually remembers.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#discover">Start discovering</a>
+        <a class="btn btn-ghost" href="#mylist">Open my list</a>
+      </div>
+      <dl class="hero-stats">
+        <div><dt>Library</dt><dd>12k+</dd></div>
+        <div><dt>Avg rating</dt><dd>4.9&#9733;</dd></div>
+        <div><dt>Curators</dt><dd>340</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero-poster reveal" aria-hidden="true">
+      <article class="poster-art" id="featuredArt">
+        <span class="poster-shine"></span>
+        <span class="poster-tag" id="featuredTag">Editor's pick</span>
+      </article>
+      <div class="poster-meta">
+        <h3 id="featuredTitle">Neon Requiem</h3>
+        <p id="featuredMeta">Sci-Fi &middot; 2025 &middot; 8.7&#9733;</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="discover" class="section" aria-labelledby="discoverTitle">
+    <div class="section-head">
+      <div>
+        <h2 id="discoverTitle">Discover</h2>
+        <p class="section-sub">Search the vault or filter by genre to narrow the mood.</p>
+      </div>
+      <div class="search-wrap">
+        <label class="sr-only" for="search">Search movies</label>
+        <input id="search" type="search" placeholder="Search titles, genres, moods…" autocomplete="off" />
+      </div>
+    </div>
+
+    <div class="chips" id="genreChips" role="group" aria-label="Filter by genre"></div>
+
+    <div class="grid" id="grid" role="list"></div>
+    <p class="empty" id="emptyState" hidden>No titles match that search. Try another genre or keyword.</p>
+  </section>
+
+  <section id="trending" class="section" aria-labelledby="trendTitle">
+    <div class="section-head">
+      <div>
+        <h2 id="trendTitle">Trending this week</h2>
+        <p class="section-sub">Ranked by community watch velocity.</p>
+      </div>
+    </div>
+    <ol class="trending" id="trendList"></ol>
+  </section>
+
+  <section id="mylist" class="section" aria-labelledby="listTitle">
+    <div class="section-head">
+      <div>
+        <h2 id="listTitle">My watchlist</h2>
+        <p class="section-sub">Saved locally in your browser — no account needed.</p>
+      </div>
+      <button class="btn btn-ghost small" id="clearList" type="button">Clear all</button>
+    </div>
+    <ul class="watchlist" id="watchlist"></ul>
+    <p class="empty" id="listEmpty">Your list is empty. Tap the plus on any poster to save it.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Cinemly &mdash; a demo discovery UI built with vanilla HTML, CSS and JavaScript.</p>
+  <p class="tiny">No frameworks &middot; No trackers &middot; Runs entirely in your browser</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
